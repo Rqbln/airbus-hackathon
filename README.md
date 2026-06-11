@@ -8,7 +8,18 @@ Solution full-stack **100 % locale** pour le hackathon HAKS 2026 (Airbus × IBM 
 | API | FastAPI | **8000** |
 | Frontend | Next.js (App Router) · shadcn/ui · Recharts — UI en français | **3000** |
 
-**Performance** : Brier OOF **≈ 0.150** (GroupKFold 5 par avion, calibration mesurée) vs baseline 0.25 — AUC ≈ 0.86.
+**Performance pipeline intégré** : Brier OOF **≈ 0.150** (GroupKFold 5 par avion, calibration mesurée) vs baseline 0.25 — AUC ≈ 0.86.
+
+## Modèle final Kaggle
+
+Le notebook [`ml/final_model.ipynb`](ml/final_model.ipynb) est la **référence du dernier modèle soumis** : feature engineering mécanistique étendu, benchmark multi-modèles (HistGB / LightGBM / XGBoost / CatBoost…), calibration sigmoid, export soumission.
+
+**Meilleur score public Kaggle : Brier 0.21038** (leaderboard sur 1 % du dataset de test).
+
+```bash
+# Depuis la racine du repo, avec Jupyter :
+jupyter notebook ml/final_model.ipynb
+```
 
 ## Démarrage rapide
 

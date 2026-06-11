@@ -1,6 +1,7 @@
 # 04 — Pipeline ML : modèles, validation, calibration, runs
 
-> Implémentation : `ml/src/bob_corn_ml/`. Features : [03_FEATURES.md](03_FEATURES.md). Lancement : [07_RUNBOOK.md](07_RUNBOOK.md).
+> Implémentation : `ml/src/bob_corn_ml/`. Features : [03_FEATURES.md](03_FEATURES.md). Lancement : [07_RUNBOOK.md](07_RUNBOOK.md).  
+> **Modèle final Kaggle** : [`ml/final_model.ipynb`](../ml/final_model.ipynb) — Brier public **0.21038** (1 % du dataset).
 
 ## Modules
 
