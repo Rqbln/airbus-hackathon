@@ -1,0 +1,37 @@
+# Environnement
+.env
+.env.*
+_*/
+
+# macOS
+.DS_Store
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Supports du hackathon non versionnés (IP Airbus)
+docs/*.pdf
+docs/*.docx
+docs/*.boxnote
+docs/slides/
+docs/Code-Samples-and-Misc-Docs/
+Aircraft Corrosion Risk Prediction Hackathon.md
+
+# Données générées (les CSV bruts data/raw/ restent versionnés)
+data/processed/
+data/artifacts/
+data/submissions/
+output/*
+!output/.gitkeep
