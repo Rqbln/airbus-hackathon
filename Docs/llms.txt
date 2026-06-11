@@ -1,0 +1,12 @@
+# CorroTwin — index documentation pour agents IA
+# Lire ce fichier en premier, puis les documents selon la tâche.
+
+> docs/00_INDEX.md : table des matières et carte du dépôt
+> docs/01_PROBLEM.md : objectif Brier, convention target 24 mois, pièges compétition
+> docs/02_DATA.md : schéma CSV (36 colonnes), volumétries, qualité des données
+> docs/03_FEATURES.md : CEI ISO 9223, cumuls, rolling, lags, anti-leakage
+> docs/04_ML_PIPELINE.md : registre modèles, runs, métriques, calibration, soumission Kaggle
+> docs/05_API.md : endpoints FastAPI (flotte, labo ML, ROI)
+> docs/06_FRONTEND.md : pages Next.js + shadcn, palette, flux utilisateur
+> docs/07_RUNBOOK.md : installation, entraînement, démarrage local, debug
+> docs/08_CONVENTIONS.md : structure repo, git, extension du projet
