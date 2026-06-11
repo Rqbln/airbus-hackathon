@@ -28,10 +28,8 @@ class FleetRiskResponse(BaseModel):
 class AircraftMonth(BaseModel):
     year_month: str
     risk: float | None = None
-    risk_smooth: float | None = None  # risque lissé (moyenne glissante) pour le graphique
     cei: float | None = None  # corrosivity_increment (indice ISO 9223 mensuel)
     cei_cum: float | None = None
-    cei_index: float | None = None  # CEI cumul normalisé 0–100 (même échelle que le risque)
     humidity: float | None = None
     chloride: float | None = None
     so2: float | None = None

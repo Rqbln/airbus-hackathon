@@ -10,8 +10,7 @@ from bob_corn_ml.train import run_experiment
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from fastapi.responses import FileResponse
 
-from .. import kaggle_ref, services
-from ..constants import KAGGLE_REFERENCE_RUN_ID
+from .. import services
 from ..schemas import RunCreatedResponse, RunRequest
 
 router = APIRouter(prefix="/api/lab", tags=["labo"])
@@ -58,20 +57,15 @@ def create_run(req: RunRequest, background: BackgroundTasks) -> RunCreatedRespon
 
 @router.get("/runs")
 def list_all_runs() -> dict:
-    return {
-        "active_run": KAGGLE_REFERENCE_RUN_ID,
-        "runs": kaggle_ref.filter_runs_for_lab(runs.list_runs()),
-    }
+    return {"active_run": runs.get_active(), "runs": runs.list_runs()}
 
 
 @router.get("/runs/{run_id}")
 def run_detail(run_id: str) -> dict:
-    if kaggle_ref.is_kaggle_reference(run_id):
-        return kaggle_ref.reference_run_detail()
     run = runs.get_run(run_id)
     if run is None:
         raise HTTPException(status_code=404, detail=f"Run introuvable : {run_id}")
-    run["is_active"] = False
+    run["is_active"] = runs.get_active() == run_id
     return run
 
 
