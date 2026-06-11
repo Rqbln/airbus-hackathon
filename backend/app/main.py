@@ -1,13 +1,13 @@
-"""API CorroTwin — FastAPI sur le port 8000 (jamais 5000 sur macOS)."""
+"""API Bob-corn — FastAPI sur le port 8000 (jamais 5000 sur macOS)."""
 
-from corrotwin_ml import paths, runs
+from bob_corn_ml import paths, runs
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .routers import aircraft, fleet, lab, roi
 
 app = FastAPI(
-    title="CorroTwin API",
+    title="Bob-corn API",
     description="Prédiction du risque de corrosion des voilures — HAKS 2026",
     version="1.0.0",
 )

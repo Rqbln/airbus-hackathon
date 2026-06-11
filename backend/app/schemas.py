@@ -1,4 +1,4 @@
-"""Schémas Pydantic de l'API CorroTwin."""
+"""Schémas Pydantic de l'API Bob-corn."""
 
 from typing import Any, Literal
 

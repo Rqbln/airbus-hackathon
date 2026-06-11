@@ -2,11 +2,11 @@
 
 import threading
 
-from corrotwin_ml import runs
-from corrotwin_ml.config import ExperimentConfig
-from corrotwin_ml.models import available_models
-from corrotwin_ml.predict import make_submission
-from corrotwin_ml.train import run_experiment
+from bob_corn_ml import runs
+from bob_corn_ml.config import ExperimentConfig
+from bob_corn_ml.models import available_models
+from bob_corn_ml.predict import make_submission
+from bob_corn_ml.train import run_experiment
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from fastapi.responses import FileResponse
 

@@ -3,8 +3,8 @@
 from functools import lru_cache
 
 import pandas as pd
-from corrotwin_ml import dataset, runs
-from corrotwin_ml.predict import load_test_predictions
+from bob_corn_ml import dataset, runs
+from bob_corn_ml.predict import load_test_predictions
 from fastapi import HTTPException
 
 HIGH_THRESHOLD = 0.75

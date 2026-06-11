@@ -7,7 +7,7 @@ Formule (paramétrable, hypothèses affichées au jury) :
 - ROI = (économies totales - coût logiciel) / coût logiciel
 """
 
-from corrotwin_ml import runs
+from bob_corn_ml import runs
 from fastapi import APIRouter
 
 from .. import services

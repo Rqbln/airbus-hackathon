@@ -27,11 +27,11 @@ make web            # Next.js -> http://localhost:3000
 ```bash
 make train          # run par défaut (histgb + Platt, cv5) persisté dans data/artifacts/runs/
 # ou en direct :
-.venv/bin/python -m corrotwin_ml.cli train --model lightgbm --calibration sigmoid --feature-set full --folds 5
-.venv/bin/python -m corrotwin_ml.cli train --model lightgbm --calibration isotonic
-.venv/bin/python -m corrotwin_ml.cli train --model lightgbm --feature-set no_age   # ablation
-.venv/bin/python -m corrotwin_ml.cli tune --model lightgbm --n-iter 10             # random search
-.venv/bin/python -m corrotwin_ml.cli list                                          # liste des runs (* = actif)
+.venv/bin/python -m bob_corn_ml.cli train --model lightgbm --calibration sigmoid --feature-set full --folds 5
+.venv/bin/python -m bob_corn_ml.cli train --model lightgbm --calibration isotonic
+.venv/bin/python -m bob_corn_ml.cli train --model lightgbm --feature-set no_age   # ablation
+.venv/bin/python -m bob_corn_ml.cli tune --model lightgbm --n-iter 10             # random search
+.venv/bin/python -m bob_corn_ml.cli list                                          # liste des runs (* = actif)
 ```
 
 Les benchmarks se lancent aussi **depuis le frontend** (`/labo`) — c'est le mode prévu pour itérer vite.
@@ -40,7 +40,7 @@ Les benchmarks se lancent aussi **depuis le frontend** (`/labo`) — c'est le mo
 
 ```bash
 make submission     # depuis le run actif -> data/submissions/submission_<ts>_<slug>.csv
-.venv/bin/python -m corrotwin_ml.cli submission --run <run_id>   # depuis un run précis
+.venv/bin/python -m bob_corn_ml.cli submission --run <run_id>   # depuis un run précis
 ```
 
 Garanties intégrées : 14 303 lignes, ordre exact de `sample_submission.csv`, valeurs clippées [0,1], erreur si une ligne manque.

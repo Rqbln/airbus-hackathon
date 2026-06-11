@@ -10,7 +10,7 @@
 | `data/raw/` | CSV bruts versionnés — ne jamais modifier en place |
 | `data/processed/`, `data/artifacts/`, `data/submissions/` | Générés, gitignorés — ne jamais committer |
 | `output/` | Sorties horodatées des notebooks (gitignoré pour les nouveaux fichiers) |
-| `ml/` | Toute logique ML. Le backend ne fait **jamais** de ML lui-même, il appelle `corrotwin_ml`. |
+| `ml/` | Toute logique ML. Le backend ne fait **jamais** de ML lui-même, il appelle `bob_corn_ml`. |
 | `backend/` | API uniquement : validation Pydantic, orchestration, lecture des artefacts |
 | `frontend/` | UI uniquement : aucun calcul métier, tout vient de l'API |
 

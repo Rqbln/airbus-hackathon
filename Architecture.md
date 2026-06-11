@@ -1,4 +1,4 @@
-# Architecture — CorroTwin
+# Architecture — Bob-corn
 
 Prédiction du risque de corrosion des voilures d'aéronefs à partir de l'exposition environnementale au sol (HAKS 2026 — Airbus × IBM × AWS). Application 100 % locale : pipeline ML Python, API FastAPI (port 8000), frontend Next.js (port 3000).
 
@@ -12,7 +12,7 @@ flowchart LR
         runs["artifacts/runs/ — un dossier par run (config, métriques, modèle)"]
         subs["submissions/ — CSV Kaggle"]
     end
-    subgraph mlPkg [ml/ — corrotwin_ml]
+    subgraph mlPkg [ml/ — bob_corn_ml]
         targets["targets.py — paires y=1/y=0 (offset 24 mois)"]
         feats["features.py — physics-informed (TOW, Arrhenius, doses, ISO 9223)"]
         registry["models.py — registre lightgbm/histgb/logreg/constant"]
@@ -42,7 +42,7 @@ flowchart LR
 sequenceDiagram
     participant UI as Frontend /labo
     participant API as FastAPI
-    participant ML as corrotwin_ml
+    participant ML as bob_corn_ml
     UI->>API: POST /api/lab/runs (config du modèle)
     API->>ML: BackgroundTask train(config)
     API-->>UI: run_id (statut pending)
@@ -60,7 +60,7 @@ sequenceDiagram
 |---|---|
 | `data/raw/` | CSV du challenge (versionnés) |
 | `data/processed/`, `data/artifacts/`, `data/submissions/` | Générés, non versionnés |
-| `ml/` | Package Python `corrotwin_ml` (pipeline complet) |
+| `ml/` | Package Python `bob_corn_ml` (pipeline complet) |
 | `backend/` | API FastAPI |
 | `frontend/` | Application Next.js + shadcn/ui (français) |
 | `docs/` | Documentation projet (conçue pour les agents IA — voir `docs/llms.txt`) |
