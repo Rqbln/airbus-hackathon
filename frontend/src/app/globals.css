@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Thème CorroTwin — aerospace enterprise SaaS, sombre navy par défaut.
+   Palette : navy #071A2C, bleu #0F62FE, cyan #38BDF8, magenta #C026D3,
+   vert #22C55E, ambre #F59E0B, rouge #EF4444, slate #0F172A, gris #64748B */
+
+:root {
+  --background: #071a2c;
+  --foreground: #f8fafc;
+  --card: #0b2138;
+  --card-foreground: #f8fafc;
+  --popover: #0b2138;
+  --popover-foreground: #f8fafc;
+  --primary: #0f62fe;
+  --primary-foreground: #f8fafc;
+  --secondary: #11304e;
+  --secondary-foreground: #e2e8f0;
+  --muted: #11304e;
+  --muted-foreground: #94a3b8;
+  --accent: #11304e;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --border: rgba(148, 163, 184, 0.15);
+  --input: rgba(148, 163, 184, 0.2);
+  --ring: #38bdf8;
+  --chart-1: #0f62fe;
+  --chart-2: #38bdf8;
+  --chart-3: #c026d3;
+  --chart-4: #22c55e;
+  --chart-5: #f59e0b;
+  --risk-low: #22c55e;
+  --risk-medium: #f59e0b;
+  --risk-high: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-risk-low: var(--risk-low);
+  --color-risk-medium: var(--risk-medium);
+  --color-risk-high: var(--risk-high);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Gradient discret bleu -> cyan pour les éléments hero / KPI */
+.gradient-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 98, 254, 0.18) 0%,
+    rgba(56, 189, 248, 0.08) 100%
+  );
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #0f62fe, #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
