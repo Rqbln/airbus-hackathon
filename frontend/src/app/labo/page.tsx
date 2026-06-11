@@ -31,6 +31,7 @@ import {
   type RunDetail,
   type RunListItem,
 } from "@/lib/api";
+import { KAGGLE_PUBLIC_BRIER, KAGGLE_REFERENCE_RUN_ID } from "@/lib/kaggle";
 import { formatNumber } from "@/lib/risk";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -121,6 +122,7 @@ export default function LaboPage() {
       .listRuns()
       .then((r) => {
         setRuns(r.runs);
+        setSelected((prev) => prev ?? KAGGLE_REFERENCE_RUN_ID);
         setError(null);
       })
       .catch((e: Error) => setError(e.message));
@@ -193,9 +195,11 @@ export default function LaboPage() {
           <FlaskConical className="h-6 w-6 text-[#C026D3]" /> Labo ML
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Configurer, lancer et comparer des benchmarks. Toutes les métriques
-          sont calculées out-of-fold (GroupKFold par avion) — objectif :
-          minimiser le Brier (baseline 0.2500).
+          Modèle final Kaggle : Brier{" "}
+          <span className="font-mono tabular-nums">{KAGGLE_PUBLIC_BRIER}</span>{" "}
+          (1&nbsp;% leaderboard public). Seuls les runs locaux avec un Brier
+          strictement supérieur sont listés, plus cette référence. Objectif
+          local : minimiser le Brier OOF (baseline 0.2500).
         </p>
       </div>
 
@@ -284,8 +288,8 @@ export default function LaboPage() {
           <CardHeader>
             <CardTitle>Runs ({runs?.length ?? "…"})</CardTitle>
             <CardDescription>
-              ★ = modèle actif (alimente le dashboard). Cocher 2 runs pour les
-              comparer. Meilleur Brier en vert.
+              ★ = modèle de référence Kaggle (métriques dashboard). Cocher 2
+              runs pour les comparer. Meilleur Brier affiché en vert.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -476,6 +480,7 @@ function RunDetailCard({
   onChanged: () => void;
 }) {
   const m = detail.metrics!;
+  const isKaggleRef = detail.run_id === KAGGLE_REFERENCE_RUN_ID;
 
   const calibData = m.calibration_curve
     .filter((b) => b.p_moyen !== null)
@@ -512,42 +517,54 @@ function RunDetailCard({
           </CardDescription>
         </div>
         <div className="flex gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={detail.status !== "done" || detail.is_active}
-            onClick={() =>
-              api.activateRun(detail.run_id).then(onChanged)
-            }
-          >
-            <Star className="h-4 w-4" /> Définir comme modèle actif
-          </Button>
-          <Button variant="outline" size="sm" asChild>
-            <a href={api.submissionUrl(detail.run_id)} download
-               onClick={(e) => {
-                 e.preventDefault();
-                 fetch(api.submissionUrl(detail.run_id), { method: "POST" })
-                   .then((r) => r.blob())
-                   .then((blob) => {
-                     const url = URL.createObjectURL(blob);
-                     const link = document.createElement("a");
-                     link.href = url;
-                     link.download = `submission_${detail.run_id}.csv`;
-                     link.click();
-                     URL.revokeObjectURL(url);
-                   });
-               }}>
-              <Download className="h-4 w-4" /> Soumission Kaggle
-            </a>
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-red-400 hover:text-red-300"
-            onClick={() => api.deleteRun(detail.run_id).then(onChanged)}
-          >
-            <Trash2 className="h-4 w-4" />
-          </Button>
+          {!isKaggleRef && (
+            <>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={detail.status !== "done" || detail.is_active}
+                onClick={() =>
+                  api.activateRun(detail.run_id).then(onChanged)
+                }
+              >
+                <Star className="h-4 w-4" /> Définir comme modèle actif
+              </Button>
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href={api.submissionUrl(detail.run_id)}
+                  download
+                  onClick={(e) => {
+                    e.preventDefault();
+                    fetch(api.submissionUrl(detail.run_id), { method: "POST" })
+                      .then((r) => r.blob())
+                      .then((blob) => {
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement("a");
+                        link.href = url;
+                        link.download = `submission_${detail.run_id}.csv`;
+                        link.click();
+                        URL.revokeObjectURL(url);
+                      });
+                  }}
+                >
+                  <Download className="h-4 w-4" /> Soumission Kaggle
+                </a>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-red-400 hover:text-red-300"
+                onClick={() => api.deleteRun(detail.run_id).then(onChanged)}
+              >
+                <Trash2 className="h-4 w-4" />
+              </Button>
+            </>
+          )}
+          {isKaggleRef && (
+            <Badge variant="outline" className="border-sky-500/30 bg-sky-500/10 text-sky-400">
+              Référence Kaggle — ml/final_model.ipynb
+            </Badge>
+          )}
         </div>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -628,8 +645,22 @@ function RunDetailCard({
                 <XAxis dataKey="fold" tick={{ fill: "#64748B", fontSize: 11 }} />
                 <YAxis domain={[0, 0.3]} tick={{ fill: "#64748B", fontSize: 11 }} />
                 <Tooltip contentStyle={CHART_TOOLTIP_STYLE} />
-                <ReferenceLine y={0.25} stroke="#EF4444" strokeDasharray="4 4"
-                  label={{ value: "baseline 0.25", fill: "#EF4444", fontSize: 11 }} />
+                <ReferenceLine
+                  y={KAGGLE_PUBLIC_BRIER}
+                  stroke="#22C55E"
+                  strokeDasharray="4 4"
+                  label={{
+                    value: `Kaggle ${KAGGLE_PUBLIC_BRIER}`,
+                    fill: "#22C55E",
+                    fontSize: 11,
+                  }}
+                />
+                <ReferenceLine
+                  y={0.25}
+                  stroke="#EF4444"
+                  strokeDasharray="4 4"
+                  label={{ value: "baseline 0.25", fill: "#EF4444", fontSize: 11 }}
+                />
                 <Bar dataKey="brier" name="Brier du fold" fill="#0F62FE" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>

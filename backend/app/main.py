@@ -4,6 +4,8 @@ from bob_corn_ml import paths, runs
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from .constants import KAGGLE_REFERENCE_RUN_ID
+from . import kaggle_ref
 from .routers import aircraft, fleet, lab, roi
 
 app = FastAPI(
@@ -29,14 +31,19 @@ paths.ensure_dirs()
 
 @app.get("/health", tags=["sante"])
 def health() -> dict:
-    return {"status": "operational", "version": "1.0.0", "active_run": runs.get_active()}
+    return {
+        "status": "operational",
+        "version": "1.0.0",
+        "active_run": KAGGLE_REFERENCE_RUN_ID,
+    }
 
 
 @app.get("/api/metrics", tags=["metriques"])
 def metrics() -> dict:
-    """Métriques du run actif (celui qui alimente le dashboard)."""
-    run_id = runs.get_active()
-    if run_id is None:
-        return {"active_run": None, "metrics": None}
-    run = runs.get_run(run_id)
-    return {"active_run": run_id, "config": run["config"], "metrics": run["metrics"]}
+    """Métriques du modèle final Kaggle (référence dashboard + labo)."""
+    ref = kaggle_ref.reference_run_detail()
+    return {
+        "active_run": KAGGLE_REFERENCE_RUN_ID,
+        "config": ref["config"],
+        "metrics": ref["metrics"],
+    }

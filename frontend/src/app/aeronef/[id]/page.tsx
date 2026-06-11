@@ -1,12 +1,11 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Droplets, Waves, Factory, Timer } from "lucide-react";
 import {
   ComposedChart,
   Line,
-  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -39,6 +38,16 @@ export default function AircraftPage({
       .catch((e: Error) => setError(e.message));
   }, [id]);
 
+  const chartData = useMemo(
+    () =>
+      data?.timeline.map((m) => ({
+        mois: m.year_month,
+        risque: m.risk_smooth !== null ? +(m.risk_smooth * 100).toFixed(1) : null,
+        cei: m.cei_index !== null ? +m.cei_index.toFixed(1) : null,
+      })) ?? [],
+    [data]
+  );
+
   if (error) {
     return (
       <Card className="border-red-500/30">
@@ -48,12 +57,6 @@ export default function AircraftPage({
   }
 
   const latest = data?.timeline.at(-1);
-  const chartData =
-    data?.timeline.map((m) => ({
-      mois: m.year_month,
-      risque: m.risk !== null ? +(m.risk * 100).toFixed(1) : null,
-      cei: m.cei_cum,
-    })) ?? [];
 
   return (
     <div className="space-y-6">
@@ -69,7 +72,8 @@ export default function AircraftPage({
             {data && <RiskBadge tier={data.tier} />}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Jumeau numérique — exposition environnementale et risque prédit.
+            Jumeau numérique — exposition environnementale et risque prédit (lissé
+            6 mois).
           </p>
         </div>
       </div>
@@ -80,7 +84,7 @@ export default function AircraftPage({
             <KpiCard
               label="Risque actuel"
               value={formatPercent(data.latest_risk)}
-              sub={`au ${latest.year_month}`}
+              sub={`au ${latest.year_month} (moy. glissante)`}
               accent="#EF4444"
             />
             <KpiCard
@@ -118,7 +122,7 @@ export default function AircraftPage({
 
       <Card>
         <CardHeader>
-          <CardTitle>Dose de corrosivité cumulée (CEI) vs risque prédit</CardTitle>
+          <CardTitle>Indice d&apos;exposition (CEI) vs risque prédit</CardTitle>
         </CardHeader>
         <CardContent className="h-96">
           {data ? (
@@ -128,29 +132,15 @@ export default function AircraftPage({
                 <XAxis
                   dataKey="mois"
                   tick={{ fill: "#64748B", fontSize: 11 }}
-                  minTickGap={40}
+                  minTickGap={48}
                 />
                 <YAxis
-                  yAxisId="risk"
                   domain={[0, 100]}
                   tick={{ fill: "#64748B", fontSize: 11 }}
                   label={{
-                    value: "Risque (%)",
+                    value: "Indice (0–100)",
                     angle: -90,
                     position: "insideLeft",
-                    fill: "#64748B",
-                    fontSize: 11,
-                  }}
-                />
-                <YAxis
-                  yAxisId="cei"
-                  orientation="right"
-                  tick={{ fill: "#64748B", fontSize: 11 }}
-                  tickFormatter={(v: number) => v.toExponential(0)}
-                  label={{
-                    value: "CEI cumulé",
-                    angle: 90,
-                    position: "insideRight",
                     fill: "#64748B",
                     fontSize: 11,
                   }}
@@ -162,25 +152,30 @@ export default function AircraftPage({
                     borderRadius: 8,
                     fontSize: 12,
                   }}
+                  formatter={(value) => [
+                    value != null ? `${value} %` : "—",
+                  ]}
                 />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
-                <Area
-                  yAxisId="cei"
-                  type="monotone"
+                <Line
+                  type="linear"
                   dataKey="cei"
-                  name="CEI cumulé (ISO 9223)"
+                  name="Indice CEI cumulé"
                   stroke="#38BDF8"
-                  fill="rgba(56,189,248,0.12)"
-                  strokeWidth={1.5}
+                  strokeWidth={2}
+                  dot={false}
+                  connectNulls
+                  isAnimationActive={false}
                 />
                 <Line
-                  yAxisId="risk"
-                  type="monotone"
+                  type="linear"
                   dataKey="risque"
-                  name="Risque calibré (%)"
+                  name="Risque lissé (6 mois)"
                   stroke="#EF4444"
                   strokeWidth={2}
                   dot={false}
+                  connectNulls
+                  isAnimationActive={false}
                 />
               </ComposedChart>
             </ResponsiveContainer>
@@ -198,11 +193,10 @@ export default function AircraftPage({
           </CardTitle>
         </CardHeader>
         <CardContent className="text-sm text-muted-foreground">
-          Le CEI (corrosivity increment, forme dose-réponse ISO 9223) intègre
-          mois après mois le produit temps de parking × mouillage de la peau ×
-          agressivité chimique (chlorure, SO₂). Le risque calibré suit cette
-          dose accumulée : plus la pente du CEI est forte, plus l&apos;aéronef se
-          rapproche du seuil critique.
+          Les deux courbes sont sur la même échelle 0–100 : l&apos;indice CEI
+          cumulé (dose d&apos;exposition normalisée) et le risque lissé sur 6 mois
+          pour une lecture stable dans le temps. Le CEI intègre parking ×
+          mouillage × agressivité chimique (chlorure, SO₂).
         </CardContent>
       </Card>
     </div>

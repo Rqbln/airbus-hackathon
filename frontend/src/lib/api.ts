@@ -26,8 +26,10 @@ export interface FleetRisk {
 export interface AircraftMonth {
   year_month: string;
   risk: number | null;
+  risk_smooth: number | null;
   cei: number | null;
   cei_cum: number | null;
+  cei_index: number | null;
   humidity: number | null;
   chloride: number | null;
   so2: number | null;

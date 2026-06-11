@@ -165,9 +165,9 @@ export default function DashboardPage() {
               accent="#EF4444"
             />
             <KpiCard
-              label="Brier (modèle actif)"
-              value={formatNumber(metrics?.metrics?.brier ?? null, 4)}
-              sub={`baseline 0.2500 · AUC ${formatNumber(metrics?.metrics?.auc ?? null, 3)}`}
+              label="Brier (Kaggle public)"
+              value={formatNumber(metrics?.metrics?.brier ?? null, 5)}
+              sub={`1 % leaderboard · AUC ${formatNumber(metrics?.metrics?.auc ?? null, 3)}`}
               icon={Gauge}
               accent="#0F62FE"
             />
