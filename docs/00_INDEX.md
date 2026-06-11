@@ -1,6 +1,6 @@
 # 00 — Index & carte du repo
 
-> Point d'entrée de la documentation CorroTwin. Conçue pour donner à un agent IA (ou un humain) le contexte complet du projet. Index machine-readable : [`llms.txt`](llms.txt).
+> Point d'entrée de la documentation Bob-corn. Conçue pour donner à un agent IA (ou un humain) le contexte complet du projet. Index machine-readable : [`llms.txt`](llms.txt).
 
 ## Le projet en 3 phrases
 
@@ -16,7 +16,7 @@
 | `data/processed/` | Matrices de features en cache parquet (générées) | [03_FEATURES.md](03_FEATURES.md) |
 | `data/artifacts/runs/<run_id>/` | Un dossier par entraînement : config, métriques, modèle, prédictions | [04_ML_PIPELINE.md](04_ML_PIPELINE.md) |
 | `data/submissions/` | CSV de soumission Kaggle (générés) | [07_RUNBOOK.md](07_RUNBOOK.md) |
-| `ml/src/corrotwin_ml/` | Package Python : pipeline complet | [04_ML_PIPELINE.md](04_ML_PIPELINE.md) |
+| `ml/src/bob_corn_ml/` | Package Python : pipeline complet | [04_ML_PIPELINE.md](04_ML_PIPELINE.md) |
 | `backend/app/` | API FastAPI (port 8000) | [05_API.md](05_API.md) |
 | `frontend/src/` | Next.js + shadcn/ui (port 3000, français) | [06_FRONTEND.md](06_FRONTEND.md) |
 | `notebooks/` | Investigations 01→05 (la logique validée est portée dans `ml/`) | [01_PROBLEM.md](01_PROBLEM.md) |

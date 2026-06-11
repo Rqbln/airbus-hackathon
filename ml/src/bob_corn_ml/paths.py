@@ -3,10 +3,10 @@
 import os
 from pathlib import Path
 
-# ml/src/corrotwin_ml/paths.py -> racine du repo = parents[3]
+# ml/src/bob_corn_ml/paths.py -> racine du repo = parents[3]
 _DEFAULT_ROOT = Path(__file__).resolve().parents[3]
 
-ROOT = Path(os.environ.get("CORROTWIN_ROOT", _DEFAULT_ROOT))
+ROOT = Path(os.environ.get("BOB_CORN_ROOT", _DEFAULT_ROOT))
 
 DATA_RAW = ROOT / "data" / "raw"
 DATA_PROCESSED = ROOT / "data" / "processed"

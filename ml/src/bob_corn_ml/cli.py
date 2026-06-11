@@ -1,4 +1,4 @@
-"""CLI du pipeline : python -m corrotwin_ml.cli <commande>."""
+"""CLI du pipeline : python -m bob_corn_ml.cli <commande>."""
 
 import argparse
 import json
@@ -11,7 +11,7 @@ from .tuning import random_search
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(prog="corrotwin_ml", description="Pipeline ML CorroTwin")
+    parser = argparse.ArgumentParser(prog="bob_corn_ml", description="Pipeline ML Bob-corn")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_train = sub.add_parser("train", help="Entraîne un modèle (run persisté)")

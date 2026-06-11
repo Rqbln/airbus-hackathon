@@ -31,7 +31,7 @@ Pour chaque avion de `corrosions_training.csv` :
 
 - 758 avions utilisables → **1 516 lignes labellisées équilibrées** (758/758).
 - Le point « −24 mois = sain » est une *hypothèse* du challenge, traitée comme vérité pour le scoring.
-- Implémentation : `ml/src/corrotwin_ml/targets.py` (port du notebook `02_target_construction.ipynb`).
+- Implémentation : `ml/src/bob_corn_ml/targets.py` (port du notebook `02_target_construction.ipynb`).
 
 ## Cœur de la difficulté
 

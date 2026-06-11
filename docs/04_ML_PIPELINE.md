@@ -1,6 +1,6 @@
 # 04 — Pipeline ML : modèles, validation, calibration, runs
 
-> Implémentation : `ml/src/corrotwin_ml/`. Features : [03_FEATURES.md](03_FEATURES.md). Lancement : [07_RUNBOOK.md](07_RUNBOOK.md).
+> Implémentation : `ml/src/bob_corn_ml/`. Features : [03_FEATURES.md](03_FEATURES.md). Lancement : [07_RUNBOOK.md](07_RUNBOOK.md).
 
 ## Modules
 
@@ -18,7 +18,7 @@
 | `tuning.py` | Random search (chaque essai = un run persisté) |
 | `predict.py` | Soumission Kaggle alignée sur `sample_submission.csv` |
 | `runs.py` | Persistance des runs + run actif |
-| `cli.py` | `python -m corrotwin_ml.cli train/submission/list/tune` |
+| `cli.py` | `python -m bob_corn_ml.cli train/submission/list/tune` |
 
 ## Protocole d'entraînement (`train.py`)
 

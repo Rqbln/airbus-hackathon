@@ -1,4 +1,4 @@
-# CorroTwin — Gestion prédictive de la corrosion des voilures
+# Bob-corn — Gestion prédictive de la corrosion des voilures
 
 Solution full-stack **100 % locale** pour le hackathon HAKS 2026 (Airbus × IBM × AWS) : prédire la probabilité de corrosion des voilures d'aéronefs à partir de leur historique d'exposition environnementale au sol, et transformer cette prédiction en outil opérationnel pour un MRO.
 

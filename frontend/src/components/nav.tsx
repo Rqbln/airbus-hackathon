@@ -22,7 +22,7 @@ export function Nav() {
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/15">
             <Plane className="h-4 w-4 text-[#38BDF8]" />
           </span>
-          <span className="gradient-text text-lg tracking-tight">CorroTwin</span>
+          <span className="gradient-text text-lg tracking-tight">Bob-corn</span>
         </Link>
         <nav className="flex items-center gap-1">
           {LINKS.map(({ href, label, icon: Icon }) => {

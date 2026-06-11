@@ -1,6 +1,6 @@
 # 03 — Features physics-informed (85) & anti-leakage
 
-> Implémentation : `ml/src/corrotwin_ml/features.py`. Physique détaillée (anglais) : [corrosion-physics-feature-engineering.md](corrosion-physics-feature-engineering.md). Origine : notebook `04_feature_engineering.ipynb`.
+> Implémentation : `ml/src/bob_corn_ml/features.py`. Physique détaillée (anglais) : [corrosion-physics-feature-engineering.md](corrosion-physics-feature-engineering.md). Origine : notebook `04_feature_engineering.ipynb`.
 
 ## Principe
 

@@ -1,4 +1,4 @@
-# CorroTwin — commandes de développement (tout en local)
+# Bob-corn — commandes de développement (tout en local)
 # Ports : backend FastAPI = 8000, frontend Next.js = 3000 (jamais 5000 sur macOS)
 
 PYTHON ?= python3.12
@@ -22,11 +22,11 @@ setup-web:
 
 ## Entraîne le modèle par défaut (run persisté dans data/artifacts/runs/)
 train:
-	$(PY) -m corrotwin_ml.cli train
+	$(PY) -m bob_corn_ml.cli train
 
 ## Génère la soumission Kaggle depuis le meilleur run
 submission:
-	$(PY) -m corrotwin_ml.cli submission
+	$(PY) -m bob_corn_ml.cli submission
 
 ## Lance l'API FastAPI sur :8000
 api:

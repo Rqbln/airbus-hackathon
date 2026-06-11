@@ -1,4 +1,4 @@
-# CorroTwin — Prédiction du risque de corrosion (HAKS 2026, Airbus x IBM x AWS)
+# Bob-corn — Prédiction du risque de corrosion (HAKS 2026, Airbus x IBM x AWS)
 
 > Application full-stack locale : pipeline ML Python (`ml/`), API FastAPI port 8000 (`backend/`), frontend Next.js + shadcn/ui port 3000 (`frontend/`, 100 % français). Objectif Kaggle : minimiser le Brier score (baseline 0.25) sur 14 303 lignes de test. Tout agent IA pointé sur ce dossier a le contexte complet du projet via les fichiers ci-dessous.
 
