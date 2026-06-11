@@ -1,0 +1,29 @@
+# Environnement
+.env
+.env.*
+_*/
+
+# macOS
+.DS_Store
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Données générées (les CSV bruts data/raw/ restent versionnés)
+data/processed/
+data/artifacts/
+data/submissions/
+output/*
+!output/.gitkeep
