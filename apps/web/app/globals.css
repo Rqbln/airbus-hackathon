@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #04070d;
+  --panel: #0b1220;
+  --border: #1a2740;
+  --text: #e6edf6;
+  --accent: #00b4d8;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+/* Subtle grid texture on the body for that mission-control vibe */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 30% 0%, rgba(0, 180, 216, 0.05), transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(185, 122, 255, 0.04), transparent 40%),
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  z-index: 0;
+}
+
+#__next, body > div { position: relative; z-index: 1; }
+
+/* Reusable panels */
+.panel {
+  background: linear-gradient(180deg, #0b1220 0%, #090f1d 100%);
+  border: 1px solid #1a2740;
+  border-radius: 6px;
+}
+
+.panel-elevated {
+  background: linear-gradient(180deg, #0e1729 0%, #0b1322 100%);
+  border: 1px solid #25395f;
+  border-radius: 6px;
+}
+
+.divider {
+  border-top: 1px solid #1a2740;
+}
+
+/* Tabular numbers */
+.mono {
+  font-family: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbars */
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #1a2740; border-radius: 3px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+/* Subtle pulse for live indicators */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+/* Section header underline */
+.section-rule {
+  height: 1px;
+  background: linear-gradient(90deg, #25395f, transparent);
+}

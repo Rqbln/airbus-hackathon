@@ -1,0 +1,60 @@
+{
+  "file": "submission_ensemble_v1.csv",
+  "rows": 14303,
+  "unique_aircraft": 142,
+  "columns": [
+    "id",
+    "corrosion_risk"
+  ],
+  "predictions": {
+    "min": 0.0,
+    "p10": 0.0,
+    "median": 0.4545454545454545,
+    "mean": 0.4599283641441413,
+    "p90": 0.8928571428571429,
+    "max": 1.0
+  },
+  "sample_rows": [
+    {
+      "id": "74b7d1_2020-01",
+      "corrosion_risk": 0.5588235294117647
+    },
+    {
+      "id": "1b9e65_2022-06",
+      "corrosion_risk": 0.5588235294117647
+    },
+    {
+      "id": "77e86b_2023-01",
+      "corrosion_risk": 0.3709677419354839
+    },
+    {
+      "id": "74b7d1_2020-02",
+      "corrosion_risk": 0.4285714285714285
+    },
+    {
+      "id": "8b98f3_2023-11",
+      "corrosion_risk": 0.0769230769230769
+    },
+    {
+      "id": "c3a69f_2025-03",
+      "corrosion_risk": 0.8928571428571429
+    },
+    {
+      "id": "77e86b_2022-01",
+      "corrosion_risk": 0.0674157303370786
+    },
+    {
+      "id": "1996b0_2022-11",
+      "corrosion_risk": 0.0
+    },
+    {
+      "id": "439fde_2024-12",
+      "corrosion_risk": 0.5588235294117647
+    },
+    {
+      "id": "74b7d1_2025-03",
+      "corrosion_risk": 0.4545454545454545
+    }
+  ],
+  "format_valid": true
+}

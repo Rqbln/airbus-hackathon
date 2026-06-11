@@ -1,0 +1,14 @@
+{
+  "model": "lightgbm_baseline",
+  "features": "raw_only_current_month",
+  "n_train_rows": 1142,
+  "n_features": 33,
+  "n_aircraft_train": 571,
+  "cv": {
+    "brier_mean": 0.19790784903432157,
+    "brier_std": 0.011955609507765783,
+    "auc_mean": 0.7981771474253238,
+    "auc_std": 0.018912600100181243,
+    "n_folds": 5
+  }
+}

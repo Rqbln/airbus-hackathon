@@ -1,0 +1,29 @@
+{
+  "components": [
+    {
+      "name": "lightgbm",
+      "brier_oof": 0.12622045321638828,
+      "weight": 0.24898216855708294
+    },
+    {
+      "name": "xgboost",
+      "brier_oof": 0.1216068275484073,
+      "weight": 0.2584282707775135
+    },
+    {
+      "name": "catboost",
+      "brier_oof": 0.11848249236946023,
+      "weight": 0.26524291926673416
+    },
+    {
+      "name": "histgb",
+      "brier_oof": 0.1382322692991326,
+      "weight": 0.22734664139866936
+    }
+  ],
+  "ensemble_brier_raw": 0.12111642451232447,
+  "ensemble_brier_sigmoid": 0.12105555274198412,
+  "ensemble_brier_isotonic": 0.1089555728259963,
+  "calibration_used": "isotonic",
+  "final_brier": 0.1089555728259963
+}

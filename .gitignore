@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Big data files (kept for hackathon, but in case of git)
+# corrosions_training.csv
+# environment_*.csv
+
+models/
+.ipynb_checkpoints/
+
+apps/web/node_modules/
+apps/web/.next/

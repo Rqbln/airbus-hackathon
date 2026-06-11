@@ -1,0 +1,17 @@
+{
+  "n_train_aircraft_env": 758,
+  "n_train_aircraft_corr": 790,
+  "n_test_aircraft": 142,
+  "n_train_env_rows": 63524,
+  "n_test_env_rows": 14303,
+  "n_submission_rows": 14303,
+  "n_raw_features": 33,
+  "period_train": {
+    "min": "2014-04",
+    "max": "2026-05"
+  },
+  "period_test": {
+    "min": "2014-03",
+    "max": "2026-05"
+  }
+}

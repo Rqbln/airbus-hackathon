@@ -1,0 +1,391 @@
+{
+  "features": {
+    "total": 150,
+    "list": [
+      "total_parking_minutes",
+      "metar_temperature_c",
+      "metar_relative_humidity",
+      "metar_dew_point_c",
+      "metar_wind_speed_kn",
+      "metar_visibility_mi",
+      "metar_hour_precipitation",
+      "sea_salt_aerosol_003_05_mixing_ratio",
+      "sea_salt_aerosol_05_5_mixing_ratio",
+      "sea_salt_aerosol_5_20_mixing_ratio",
+      "dust_aerosol_003_055_mixing_ratio",
+      "dust_aerosol_055_09_mixing_ratio",
+      "dust_aerosol_09_20_mixing_ratio",
+      "hydrophilic_organic_matter_aerosol_mixing_ratio",
+      "hydrophobic_organic_matter_aerosol_mixing_ratio",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio",
+      "hydrophobic_black_carbon_aerosol_mixing_ratio",
+      "sulphate_aerosol_mixing_ratio",
+      "ethane",
+      "c3h8",
+      "isoprene",
+      "carbon_monoxide_mass_mixing_ratio",
+      "ozone_mass_mixing_ratio",
+      "h2o2",
+      "formaldehyde",
+      "hno3",
+      "nitrogen_monoxide_mass_mixing_ratio",
+      "nitrogen_dioxide_mass_mixing_ratio",
+      "oh",
+      "organic_nitrates",
+      "specific_humidity",
+      "sulphur_dioxide_mass_mixing_ratio",
+      "temperature",
+      "age_months",
+      "years_since_delivery",
+      "month_sin",
+      "month_cos",
+      "humidity_x_salt",
+      "humidity_x_so2",
+      "humidity_x_o3",
+      "parking_x_humidity",
+      "parking_x_salt",
+      "parking_x_so2",
+      "cum_parking_minutes",
+      "cum_sea_salt_exposure",
+      "cum_sea_salt_fine_exposure",
+      "cum_so2_exposure",
+      "cum_ozone_exposure",
+      "cum_hno3_exposure",
+      "cum_sulphate_exposure",
+      "cum_no2_exposure",
+      "cum_humidity_exposure",
+      "cum_humidity_x_salt",
+      "cum_humidity_x_so2",
+      "total_parking_minutes__roll3_mean",
+      "total_parking_minutes__roll3_max",
+      "total_parking_minutes__roll6_mean",
+      "total_parking_minutes__roll6_max",
+      "total_parking_minutes__roll12_mean",
+      "total_parking_minutes__roll12_max",
+      "total_parking_minutes__roll24_mean",
+      "total_parking_minutes__roll24_max",
+      "metar_relative_humidity__roll3_mean",
+      "metar_relative_humidity__roll3_max",
+      "metar_relative_humidity__roll6_mean",
+      "metar_relative_humidity__roll6_max",
+      "metar_relative_humidity__roll12_mean",
+      "metar_relative_humidity__roll12_max",
+      "metar_relative_humidity__roll24_mean",
+      "metar_relative_humidity__roll24_max",
+      "metar_temperature_c__roll3_mean",
+      "metar_temperature_c__roll3_max",
+      "metar_temperature_c__roll6_mean",
+      "metar_temperature_c__roll6_max",
+      "metar_temperature_c__roll12_mean",
+      "metar_temperature_c__roll12_max",
+      "metar_temperature_c__roll24_mean",
+      "metar_temperature_c__roll24_max",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll3_mean",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll3_max",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll6_mean",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll6_max",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll12_mean",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll12_max",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll24_mean",
+      "sea_salt_aerosol_05_5_mixing_ratio__roll24_max",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll3_mean",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll3_max",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll6_mean",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll6_max",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll12_mean",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll12_max",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll24_mean",
+      "sea_salt_aerosol_003_05_mixing_ratio__roll24_max",
+      "sulphur_dioxide_mass_mixing_ratio__roll3_mean",
+      "sulphur_dioxide_mass_mixing_ratio__roll3_max",
+      "sulphur_dioxide_mass_mixing_ratio__roll6_mean",
+      "sulphur_dioxide_mass_mixing_ratio__roll6_max",
+      "sulphur_dioxide_mass_mixing_ratio__roll12_mean",
+      "sulphur_dioxide_mass_mixing_ratio__roll12_max",
+      "sulphur_dioxide_mass_mixing_ratio__roll24_mean",
+      "sulphur_dioxide_mass_mixing_ratio__roll24_max",
+      "ozone_mass_mixing_ratio__roll3_mean",
+      "ozone_mass_mixing_ratio__roll3_max",
+      "ozone_mass_mixing_ratio__roll6_mean",
+      "ozone_mass_mixing_ratio__roll6_max",
+      "ozone_mass_mixing_ratio__roll12_mean",
+      "ozone_mass_mixing_ratio__roll12_max",
+      "ozone_mass_mixing_ratio__roll24_mean",
+      "ozone_mass_mixing_ratio__roll24_max",
+      "nitrogen_dioxide_mass_mixing_ratio__roll3_mean",
+      "nitrogen_dioxide_mass_mixing_ratio__roll3_max",
+      "nitrogen_dioxide_mass_mixing_ratio__roll6_mean",
+      "nitrogen_dioxide_mass_mixing_ratio__roll6_max",
+      "nitrogen_dioxide_mass_mixing_ratio__roll12_mean",
+      "nitrogen_dioxide_mass_mixing_ratio__roll12_max",
+      "nitrogen_dioxide_mass_mixing_ratio__roll24_mean",
+      "nitrogen_dioxide_mass_mixing_ratio__roll24_max",
+      "hno3__roll3_mean",
+      "hno3__roll3_max",
+      "hno3__roll6_mean",
+      "hno3__roll6_max",
+      "hno3__roll12_mean",
+      "hno3__roll12_max",
+      "hno3__roll24_mean",
+      "hno3__roll24_max",
+      "sulphate_aerosol_mixing_ratio__roll3_mean",
+      "sulphate_aerosol_mixing_ratio__roll3_max",
+      "sulphate_aerosol_mixing_ratio__roll6_mean",
+      "sulphate_aerosol_mixing_ratio__roll6_max",
+      "sulphate_aerosol_mixing_ratio__roll12_mean",
+      "sulphate_aerosol_mixing_ratio__roll12_max",
+      "sulphate_aerosol_mixing_ratio__roll24_mean",
+      "sulphate_aerosol_mixing_ratio__roll24_max",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll3_mean",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll3_max",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll6_mean",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll6_max",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll12_mean",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll12_max",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll24_mean",
+      "hydrophilic_black_carbon_aerosol_mixing_ratio__roll24_max",
+      "specific_humidity__roll3_mean",
+      "specific_humidity__roll3_max",
+      "specific_humidity__roll6_mean",
+      "specific_humidity__roll6_max",
+      "specific_humidity__roll12_mean",
+      "specific_humidity__roll12_max",
+      "specific_humidity__roll24_mean",
+      "specific_humidity__roll24_max"
+    ]
+  },
+  "n_train_rows": 1142,
+  "n_aircraft_train": 571,
+  "models": {
+    "lightgbm": {
+      "cv": {
+        "brier_mean": 0.12622848831278458,
+        "brier_std": 0.020210323883256717,
+        "auc_mean": 0.9213092491451491,
+        "auc_std": 0.02146633740038979,
+        "n_folds": 5
+      },
+      "fold_scores": [
+        {
+          "fold": 1,
+          "brier": 0.12164044827049454,
+          "auc": 0.9271833648393194,
+          "n_val": 230
+        },
+        {
+          "fold": 2,
+          "brier": 0.16011651707051877,
+          "auc": 0.8848107109879962,
+          "n_val": 228
+        },
+        {
+          "fold": 3,
+          "brier": 0.09670193546329547,
+          "auc": 0.9519082794706063,
+          "n_val": 228
+        },
+        {
+          "fold": 4,
+          "brier": 0.12704688171460346,
+          "auc": 0.9205909510618652,
+          "n_val": 228
+        },
+        {
+          "fold": 5,
+          "brier": 0.12563665904501067,
+          "auc": 0.9220529393659587,
+          "n_val": 228
+        }
+      ]
+    },
+    "xgboost": {
+      "cv": {
+        "brier_mean": 0.1216116083763982,
+        "brier_std": 0.0162842971645317,
+        "auc_mean": 0.914204232100498,
+        "auc_std": 0.021093863135608786,
+        "n_folds": 5
+      },
+      "fold_scores": [
+        {
+          "fold": 1,
+          "brier": 0.11888180511291052,
+          "auc": 0.9214366729678639,
+          "n_val": 230
+        },
+        {
+          "fold": 2,
+          "brier": 0.1508953358419015,
+          "auc": 0.876269621421976,
+          "n_val": 228
+        },
+        {
+          "fold": 3,
+          "brier": 0.10191200837268208,
+          "auc": 0.9397506925207756,
+          "n_val": 228
+        },
+        {
+          "fold": 4,
+          "brier": 0.11321765505108716,
+          "auc": 0.9225915666358879,
+          "n_val": 228
+        },
+        {
+          "fold": 5,
+          "brier": 0.1231512375034097,
+          "auc": 0.9109726069559865,
+          "n_val": 228
+        }
+      ]
+    },
+    "catboost": {
+      "cv": {
+        "brier_mean": 0.1184905353959194,
+        "brier_std": 0.018284705514401978,
+        "auc_mean": 0.9187193744650818,
+        "auc_std": 0.019225812560985725,
+        "n_folds": 5
+      },
+      "fold_scores": [
+        {
+          "fold": 1,
+          "brier": 0.11389796728773942,
+          "auc": 0.9240831758034027,
+          "n_val": 230
+        },
+        {
+          "fold": 2,
+          "brier": 0.15048946344044037,
+          "auc": 0.8858110187750077,
+          "n_val": 228
+        },
+        {
+          "fold": 3,
+          "brier": 0.09370355542959735,
+          "auc": 0.9456755924899969,
+          "n_val": 228
+        },
+        {
+          "fold": 4,
+          "brier": 0.11508272132606778,
+          "auc": 0.9212065250846415,
+          "n_val": 228
+        },
+        {
+          "fold": 5,
+          "brier": 0.11927896949575206,
+          "auc": 0.9168205601723607,
+          "n_val": 228
+        }
+      ]
+    },
+    "histgb": {
+      "cv": {
+        "brier_mean": 0.13823587788823163,
+        "brier_std": 0.02623725830173795,
+        "auc_mean": 0.9159235094003041,
+        "auc_std": 0.023212459365330857,
+        "n_folds": 5
+      },
+      "fold_scores": [
+        {
+          "fold": 1,
+          "brier": 0.1361753735126909,
+          "auc": 0.9270321361058601,
+          "n_val": 230
+        },
+        {
+          "fold": 2,
+          "brier": 0.17555894878804168,
+          "auc": 0.8805016928285626,
+          "n_val": 228
+        },
+        {
+          "fold": 3,
+          "brier": 0.09451827510117096,
+          "auc": 0.9504462911665128,
+          "n_val": 228
+        },
+        {
+          "fold": 4,
+          "brier": 0.14945405778146867,
+          "auc": 0.904816866728224,
+          "n_val": 228
+        },
+        {
+          "fold": 5,
+          "brier": 0.13547273425778597,
+          "auc": 0.9168205601723607,
+          "n_val": 228
+        }
+      ]
+    },
+    "logreg": {
+      "cv": {
+        "brier_mean": 0.14905612500322496,
+        "brier_std": 0.015265345397408973,
+        "auc_mean": 0.8647894219015185,
+        "auc_std": 0.023876299880073462,
+        "n_folds": 5
+      },
+      "fold_scores": [
+        {
+          "fold": 1,
+          "brier": 0.16545773551478152,
+          "auc": 0.8427221172022684,
+          "n_val": 230
+        },
+        {
+          "fold": 2,
+          "brier": 0.16685404497375222,
+          "auc": 0.8355647891658973,
+          "n_val": 228
+        },
+        {
+          "fold": 3,
+          "brier": 0.129465749440905,
+          "auc": 0.8958910433979685,
+          "n_val": 228
+        },
+        {
+          "fold": 4,
+          "brier": 0.13508526861678635,
+          "auc": 0.8878885811018775,
+          "n_val": 228
+        },
+        {
+          "fold": 5,
+          "brier": 0.14841782646989973,
+          "auc": 0.8618805786395813,
+          "n_val": 228
+        }
+      ]
+    }
+  },
+  "best_model": "catboost",
+  "best_calibration": "isotonic",
+  "calibration_results": {
+    "raw": {
+      "brier_mean": 0.1184905353959194,
+      "brier_std": 0.018284705514401978,
+      "auc_mean": 0.9187193744650818,
+      "auc_std": 0.019225812560985725,
+      "n_folds": 5
+    },
+    "sigmoid": {
+      "brier_mean": 0.11829038315015272,
+      "brier_std": 0.014772676900952422,
+      "auc_mean": 0.9195631903025564,
+      "auc_std": 0.018389409935745026,
+      "n_folds": 5
+    },
+    "isotonic": {
+      "brier_mean": 0.11528143652061354,
+      "brier_std": 0.01465157440742209,
+      "auc_mean": 0.9176391549297414,
+      "auc_std": 0.018981840499621826,
+      "n_folds": 5
+    }
+  }
+}

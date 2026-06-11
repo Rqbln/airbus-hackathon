@@ -1,0 +1,68 @@
+{
+  "baseline": {
+    "name": "LightGBM raw features",
+    "brier_mean": 0.19790784903432157,
+    "brier_std": 0.011955609507765783,
+    "auc_mean": 0.7981771474253238,
+    "n_features": 33
+  },
+  "feature_engineering": {
+    "best_model": "catboost",
+    "best_calibration": "isotonic",
+    "models": {
+      "lightgbm": {
+        "brier_mean": 0.12622848831278458,
+        "brier_std": 0.020210323883256717,
+        "auc_mean": 0.9213092491451491
+      },
+      "xgboost": {
+        "brier_mean": 0.1216116083763982,
+        "brier_std": 0.0162842971645317,
+        "auc_mean": 0.914204232100498
+      },
+      "catboost": {
+        "brier_mean": 0.1184905353959194,
+        "brier_std": 0.018284705514401978,
+        "auc_mean": 0.9187193744650818
+      },
+      "histgb": {
+        "brier_mean": 0.13823587788823163,
+        "brier_std": 0.02623725830173795,
+        "auc_mean": 0.9159235094003041
+      },
+      "logreg": {
+        "brier_mean": 0.14905612500322496,
+        "brier_std": 0.015265345397408973,
+        "auc_mean": 0.8647894219015185
+      }
+    },
+    "n_features": 150
+  },
+  "ensemble": {
+    "components": [
+      {
+        "name": "lightgbm",
+        "brier_oof": 0.12622045321638828,
+        "weight": 0.24898216855708294
+      },
+      {
+        "name": "xgboost",
+        "brier_oof": 0.1216068275484073,
+        "weight": 0.2584282707775135
+      },
+      {
+        "name": "catboost",
+        "brier_oof": 0.11848249236946023,
+        "weight": 0.26524291926673416
+      },
+      {
+        "name": "histgb",
+        "brier_oof": 0.1382322692991326,
+        "weight": 0.22734664139866936
+      }
+    ],
+    "brier_raw": 0.12111642451232447,
+    "brier_calibrated": 0.1089555728259963,
+    "calibration_used": "isotonic"
+  }
+}
