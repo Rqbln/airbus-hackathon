@@ -21,6 +21,14 @@ node_modules/
 out/
 *.tsbuildinfo
 
+# Supports du hackathon non versionnés (IP Airbus)
+docs/*.pdf
+docs/*.docx
+docs/*.boxnote
+docs/slides/
+docs/Code-Samples-and-Misc-Docs/
+Aircraft Corrosion Risk Prediction Hackathon.md
+
 # Données générées (les CSV bruts data/raw/ restent versionnés)
 data/processed/
 data/artifacts/

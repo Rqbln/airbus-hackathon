@@ -1,0 +1,20 @@
+# CorroTwin — Prédiction du risque de corrosion (HAKS 2026, Airbus x IBM x AWS)
+
+> Application full-stack locale : pipeline ML Python (`ml/`), API FastAPI port 8000 (`backend/`), frontend Next.js + shadcn/ui port 3000 (`frontend/`, 100 % français). Objectif Kaggle : minimiser le Brier score (baseline 0.25) sur 14 303 lignes de test. Tout agent IA pointé sur ce dossier a le contexte complet du projet via les fichiers ci-dessous.
+
+## Documentation principale (lire dans l'ordre)
+
+- [00_INDEX.md](00_INDEX.md) : carte du repo et table des matières
+- [01_PROBLEM.md](01_PROBLEM.md) : problème, métrique Brier, convention target 24 mois, faits vérifiés
+- [02_DATA.md](02_DATA.md) : dictionnaire des 36 colonnes, volumétries, pièges connus
+- [03_FEATURES.md](03_FEATURES.md) : spec des 85 features physics-informed, règles anti-leakage
+- [04_ML_PIPELINE.md](04_ML_PIPELINE.md) : registre de modèles, CV, calibration, format d'un run, résultats de référence
+- [05_API.md](05_API.md) : référence des endpoints FastAPI avec exemples JSON
+- [06_FRONTEND.md](06_FRONTEND.md) : pages, design tokens (palette hex), conventions UI
+- [07_RUNBOOK.md](07_RUNBOOK.md) : commandes make, ports, démarrage, debug, soumission Kaggle
+- [08_CONVENTIONS.md](08_CONVENTIONS.md) : structure repo, style, règles git, comment étendre
+
+## Références d'origine
+
+- [problem-analysis.md](problem-analysis.md) : analyse initiale du problème et des données (anglais)
+- [corrosion-physics-feature-engineering.md](corrosion-physics-feature-engineering.md) : physique de la corrosion → features (anglais)

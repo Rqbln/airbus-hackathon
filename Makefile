@@ -1,7 +1,7 @@
 # CorroTwin — commandes de développement (tout en local)
 # Ports : backend FastAPI = 8000, frontend Next.js = 3000 (jamais 5000 sur macOS)
 
-PYTHON ?= python3
+PYTHON ?= python3.12
 VENV    = .venv
 PIP     = $(VENV)/bin/pip
 PY      = $(VENV)/bin/python
